@@ -13,11 +13,9 @@ class App extends React.Component {
   };
 
   onLeaveFeedback = evt => {
-    this.setState(prevState => {
-      return {
-        [evt]: prevState[evt] + 1,
-      };
-    });
+    this.setState(prevState => ({
+      [evt]: prevState[evt] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
@@ -63,13 +61,9 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  state: PropTypes.arrayOf(
-    PropTypes.shape({
-      good: PropTypes.number.isRequired,
-      neutral: PropTypes.number.isRequired,
-      bad: PropTypes.number.isRequired,
-    })
-  ),
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
 };
 
 export default App;
